@@ -2,12 +2,12 @@ const express = require('express');
 
 const app = express();
 
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
-app.get('/', () => {
-    console.log('Está vivo!!');
+app.get('/', (_req, res) => {
+    res.send('Está vivo!!');
 })
 
-app.listen(PORT, () => {
-    console.log(`Estou na portinha ${PORT}`);
+app.listen(port, () => {
+    console.log(`Estou na portinha ${port}`);
 });
